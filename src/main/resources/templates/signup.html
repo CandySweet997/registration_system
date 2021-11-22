@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container text-center">
+    <div class="container">
+        <h1>Registration</h1>
+    </div>
+    <div class="m-3">
+        <form th:action="@{/process_register}" method="post" th:object="${user}"
+        style="max-width: 500px ; margin: 0 auto">
+            <div class="form-group row">
+                <label class="col-form-label col-4">E-mail</label>
+                <div class="col-8">
+                    <input type="email" class="form-control" th:field="*{email}" required/>
+                </div>
+
+                <label class="col-form-label col-4">First Name</label>
+                <div class="col-8">
+                    <input type="text" class="form-control"  th:field="*{firstname}" required/>
+                </div>
+
+                <label class="col-form-label col-4">Last Name</label>
+                <div class="col-8">
+                    <input type="text" class="form-control"  th:field="*{lastname}" required />
+                </div>
+
+                <label class="col-form-label col-4">Password</label>
+                <div class="col-8">
+                    <input type="password" class="form-control" th:field="*{password}" required />
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
